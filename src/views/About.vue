@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
-    <h1>This is an about pagasde</h1>
+  <div class="about white--text">
+    <h1>仕事を探してます。</h1>
   </div>
 </template>
