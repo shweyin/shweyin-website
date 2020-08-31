@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app dark class="grey darken-4">
+    <v-navigation-drawer app dark permanent class="grey darken-4">
         <v-list>
             <v-list-item class="pa-3">
                 <v-img src="@/assets/shweyin-shot.jpg" class="rounded"></v-img>
