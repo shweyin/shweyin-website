@@ -1,18 +1,11 @@
 <template>
-  <div class="home white--text pa-5">
-    <h1>こんにちは、シュウです。</h1>
-    <div>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/urF_kycYiZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
+    <v-container>
+      <v-card>      <iframe width="450" height="450" src="https://www.youtube.com/embed/urF_kycYiZM" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</v-card>
+    </v-container>
 </template>
 
-<script>
-// @ is an alias to /src
+<style scoped>
 
-export default {
-  name: 'Home',
-  components: {
-  }
-}
-</script>
+  
+</style>
