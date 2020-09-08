@@ -1,24 +1,24 @@
 <template>
     <v-container class="pa-5">
         <v-row>
-            <v-col cols="7" align="center" class="py-16">
+            <v-col lg="7" align="center" class="py-16">
                 <v-hover v-slot:default="{hover}">
                     <h1>{{hover ? "卒業まで後" : "Time until Graduation"}}</h1>
                 </v-hover>                
                 <div class="timer">                    
                     <div class="time">
                         <p>Days</p>
-                        <h1>{{days}}</h1>
+                        <h1>{{days > 9 ? days : "0" + days}}</h1>
                         <p>日</p>
                     </div>
                     <div class="time">
                         <p>Hours</p>
-                        <h1>{{hours}}</h1>
+                        <h1>{{hours > 9 ? hours : "0" + hours}}</h1>
                         <p>時間</p>
                     </div>
                     <div class="time">
                         <p>Minutes</p>
-                        <h1>{{minutes}}</h1>
+                        <h1>{{minutes > 9 ? minutes : "0" + minutes}}</h1>
                         <p>分</p>
                     </div>
                     <div class="time">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </v-col>
-            <v-col cols="5">
+            <v-col lg="5">
                 <v-card height class="grey darken-1">
                     <v-card-title class="grey darken-4 white--text">My Japan Trip</v-card-title>
                     <v-card-text >
