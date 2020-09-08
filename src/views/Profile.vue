@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row>
-            <v-col>
+            <v-col lg="6">
                 <v-card class="grey darken-1">
                     <v-img src="@/assets/japan-banner.jpg" class="white--text align-end" height="200">
                         <v-card-title style="font-size: 28pt;">About Me</v-card-title>                        
@@ -121,8 +121,8 @@
                 </v-card>
 
             </v-col>
-            <v-col class="">
-                <v-img src="@/assets/resume.png"></v-img>
+            <v-col lg="6" class="">
+                <v-img src="@/assets/resume.png"></v-img>                
             </v-col>
         </v-row>
     </v-container>    
