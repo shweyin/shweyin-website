@@ -1,7 +1,7 @@
 <template>
     <v-container class="pa-5">
         <v-row>
-            <v-col lg="7" align="center" class="py-16">
+            <v-col lg="12" align="center" class="py-16">
                 <v-hover v-slot:default="{hover}">
                     <h1>{{hover ? "卒業まで後" : "Time until Graduation"}}</h1>
                 </v-hover>                
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </v-col>
-            <v-col lg="5">
+            <!-- <v-col lg="5">
                 <v-card height class="grey darken-1">
                     <v-card-title class="grey darken-4 white--text">My Japan Trip</v-card-title>
                     <v-card-text >
@@ -43,18 +43,14 @@
                     
                 </v-card>
 
-            </v-col>
-            
-            
+            </v-col> -->
         </v-row>
-         <!-- <v-row>
-             <v-col>
-                <v-card class="grey darken-1">
-                    <v-card-title class="grey darken-4 white--text">Instagram</v-card-title>
-                    <v-card-text><br><v-img src="@/assets/insta.jpg" height="470" width="250"></v-img></v-card-text>
-                </v-card>
-             </v-col>
-         </v-row> -->
+        <v-row class="pa-5">
+            <v-col lg="12" align="center">
+                <iframe frameborder="1" scrolling="no" class="dino-game" src="https://www.dinogame.net/game/"></iframe>
+                <p class="white--text">Click in the box and press spacebar to play</p>
+            </v-col>
+        </v-row>
 
     </v-container>
 </template>
@@ -73,6 +69,10 @@
     .time{
         padding: 1em 3em;
         color: white;
+    }
+    .dino-game{
+        overflow: hidden;
+        width: 100%;
     }
 </style>
 

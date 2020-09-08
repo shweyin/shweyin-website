@@ -7,7 +7,7 @@
                         <v-card-title style="font-size: 28pt;">About Me</v-card-title>                        
                     </v-img>
                     <v-card-text>
-                        <v-tabs background-color="transparent" grow dark>
+                        <v-tabs background-color="transparent" grow dark>                 
                             <v-tab color="#616161">English</v-tab>
                             <v-tab-item color="#616161">
                                 <v-card color="#616161" class="grey darken-1 rounded-0" flat dark>                                    
@@ -100,6 +100,14 @@
                                     </v-card-text>
                                 </v-card>
                             </v-tab-item>
+                            <v-tab color="#616161">自己紹介動画</v-tab>
+                            <v-tab-item color="#616161">
+                                <v-card height class="grey darken-1 rounded-0" flat>
+                                    <v-card-text >
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uGfglpWGUDE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </v-card-text>                                    
+                                </v-card>
+                            </v-tab-item>
                         </v-tabs>
                         <v-card-actions class="white--text">
                             <v-spacer></v-spacer>
@@ -107,9 +115,11 @@
                             <v-btn icon dark href="https://www.linkedin.com/in/shweyin-than-656153130/" target="_blank"><v-icon>mdi-linkedin</v-icon></v-btn>
                             <v-btn icon dark href="https://github.com/shweyin" target="_blank"><v-icon>mdi-github</v-icon></v-btn>
                         </v-card-actions>
+                        
                     </v-card-text>
-                    
+                                        
                 </v-card>
+
             </v-col>
             <v-col class="">
                 <v-img src="@/assets/resume.png"></v-img>
