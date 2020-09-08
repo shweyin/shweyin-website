@@ -20,9 +20,15 @@
             <tbody>
                 <tr>
                     <td>Shweyin Portfolio Website</td>
-                    <td><a href="#">Link to Site</a></td>
+                    <td><router-link to="/">Link</router-link></td>
                     <td>Aug 31, 2021</td>
                     <td>WIP</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </v-simple-table>

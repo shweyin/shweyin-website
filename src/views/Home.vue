@@ -3,7 +3,7 @@
         <v-row>
             <v-col lg="12" align="center" class="py-16">
                 <v-hover v-slot:default="{hover}">
-                    <h1>{{hover ? "卒業まで後" : "Time until Graduation"}}</h1>
+                    <h1>{{hover ? "卒業まで後" : "Time Until Graduation"}}</h1>
                 </v-hover>                
                 <div class="timer">                    
                     <div class="time">
