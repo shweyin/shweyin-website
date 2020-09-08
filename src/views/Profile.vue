@@ -104,7 +104,7 @@
                             <v-tab-item color="#616161">
                                 <v-card height class="grey darken-1 rounded-0" flat>
                                     <v-card-text >
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/uGfglpWGUDE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/uGfglpWGUDE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </v-card-text>                                    
                                 </v-card>
                             </v-tab-item>
