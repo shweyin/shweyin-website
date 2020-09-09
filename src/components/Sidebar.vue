@@ -36,6 +36,14 @@
                     <v-list-item-title>History</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
+            <v-list-item link to="/covid">
+                <v-list-item-action>
+                    <v-icon>mdi-chart-line</v-icon>
+                </v-list-item-action>
+                <v-list-item-content>
+                    <v-list-item-title>Covid Stats</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
         </v-list>
     </v-navigation-drawer>
 </template>

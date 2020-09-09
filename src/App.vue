@@ -1,7 +1,7 @@
 <template>
-  <v-app class="bg">
+  <v-app>
     <Sidebar/>
-    <v-main app class="grey darken-3">      
+    <v-main  class="grey darken-3">      
       <router-view/>
     </v-main>
   </v-app>
