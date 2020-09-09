@@ -2,8 +2,8 @@
     <v-container class="pa-5">
         <v-row>
             <v-col lg="12" align="center" class="py-16">
-                <v-hover v-slot:default="{hover}">
-                    <h1>{{hover ? "卒業まで後" : "Time Until Graduation"}}</h1>
+                <v-hover close-delay="400" v-slot:default="{hover}">
+                    <h1>{{$vuetify.breakpoint.smAndDown || hover ? "卒業まで" : "Time Until Graduation"}}</h1>
                 </v-hover>                
                 <div class="timer">                    
                     <div class="time">
@@ -59,6 +59,7 @@
     h1{
         font-size: 4em;
         color: white;
+        word-wrap: break-word;
     }
     .timer{
         display: flex;

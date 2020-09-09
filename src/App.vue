@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-app class="bg">
     <Sidebar/>
-    <v-main class="grey darken-3">      
+    <v-main class="grey darken-3 bg">      
       <router-view/>
     </v-main>
   </v-app>
@@ -22,3 +22,10 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+  .bg{
+    height: 0;
+  }
+
+</style>
