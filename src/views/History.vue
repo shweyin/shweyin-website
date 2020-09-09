@@ -23,7 +23,7 @@ export default {
             for(var i = 0; i < data.total_count; i++) {
                 if(data.items[i].repository.name == "shweyin-website"){
                     this.commits.push(data.items[i]);
-                }      
+                }                      
             }
         });
     },
