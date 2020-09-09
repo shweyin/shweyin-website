@@ -1,7 +1,7 @@
 <template>
     <v-container class="pa-5">
         <v-row>
-            <v-col cols="6">
+            <v-col lg="6">
                 <v-timeline dense>
                     <v-timeline-item
                         v-for="(item, i) in commits"
@@ -20,16 +20,15 @@
                     </v-timeline-item>
                 </v-timeline>
             </v-col>
-            <v-col cols="6">
+            <v-col lg="6">
                 <v-card flat class="grey darken-2" dark>
                     <v-card-title>
                         My Commit History
                     </v-card-title>
                     <v-card-text>
-                        <v-img src="https://ghchart.rshah.org/shweyin" alt="My chart"></v-img>
+                        <v-img src="https://ghchart.rshah.org/shweyin" alt="My chart" href="https://github.com/shweyin"></v-img>
                     </v-card-text>                    
-                </v-card>
-                
+                </v-card>                
             </v-col>
         </v-row>       
     </v-container>
