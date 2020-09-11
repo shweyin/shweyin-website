@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Deployed to heroku
+[Link](https://shweyin.herokuapp.com/#/)
