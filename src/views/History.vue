@@ -1,26 +1,29 @@
 <template>
     <v-container class="pa-5">
-        <v-row>
-            <v-col lg="6">
-                <v-timeline dense>
-                    <v-timeline-item
-                        v-for="(item, i) in commits"
-                        :key="i"
-                        small="small"
-                        class="white--text"
-                        color="grey darken-4"
-                        icon="mdi-github"
-                    >
-                        <v-list-item link :href="item.html_url" target="_blank" dark>
-                            <v-list-item-content>
-                                <v-list-item-title>{{item.commit.message}}</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <!-- <a :href="item.html_url" target="_blank">{{item.commit.message}}</a> -->
-                    </v-timeline-item>
-                </v-timeline>
-            </v-col>
-            <v-col lg="6">
+        <v-row>            
+                <v-col lg="12">
+                    <h1 class="white--text">My Github Commit History</h1>
+                    <v-timeline dense>
+                        <v-timeline-item
+                            v-for="(item, i) in commits"
+                            :key="i"
+                            small="small"
+                            class="white--text"
+                            color="grey darken-4"
+                            icon="mdi-github"
+                        >
+                            <v-list-item link :href="item.html_url" target="_blank" dark>
+                                <v-list-item-content>{{item.commit.message}}</v-list-item-content>
+                                <v-list-item-content>{{item.commit.author.date.substring(0,10)}}</v-list-item-content>
+
+                            </v-list-item>
+                            <!-- <a :href="item.html_url" target="_blank">{{item.commit.message}}</a> -->
+                        </v-timeline-item>
+                    </v-timeline>
+                </v-col>
+                
+            
+            <!-- <v-col lg="6">
                 <v-card flat class="grey darken-2" dark>
                     <v-card-title>
                         My Commit History
@@ -29,8 +32,8 @@
                         <v-img src="https://ghchart.rshah.org/shweyin" alt="My chart" href="https://github.com/shweyin"></v-img>
                     </v-card-text>                    
                 </v-card>                
-            </v-col>
-        </v-row>       
+            </v-col> -->
+        </v-row>
     </v-container>
 </template>
 

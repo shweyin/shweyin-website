@@ -16,17 +16,17 @@ Vue.use(VueRouter)
   },
   {
     path: '/profile',
-    name: 'Home',
+    name: 'Profile',
     component: Profile
   },
   {
     path: '/projects',
-    name: 'Home',
+    name: 'Projects',
     component: Projects
   },
   {
     path: '/history',
-    name: 'About',
+    name: 'History',
     component: History
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
