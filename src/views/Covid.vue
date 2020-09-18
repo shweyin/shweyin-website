@@ -1,11 +1,8 @@
 <template>
     <v-container>        
-        <v-row>
-            <v-col id="container"></v-col>
-        </v-row>
-        <v-row>
-
-        </v-row>           
+        <v-row id="countries">
+           
+        </v-row>     
     </v-container>
 </template>
 
@@ -15,41 +12,60 @@ var Highcharts = require('highcharts');
 export default {
     data(){
         return{
-            canada: []
+            countries: [['Canada', 0], ['Japan', 0], ['Hungary', 0], ['Switzerland', 0], ['Poland', 0], ['Germany', 0], ['Italy', 0], ['Sweden', 0]]
         }
     },
     methods: {
         createChart: function(){
-            Highcharts.chart('container', {
+            Highcharts.chart('countries', {
                 chart: {
-                    type: 'line'
+                    type: 'column'
+                },
+                title: {
+                    text: 'Active cases of covid per country'
+                },
+                subtitle: {
+                    text: '<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a>'
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Currect active cases'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'As of today: <b>{point.y}</b> active cases.'
                 },
                 series: [{
-                    name: 'test',
-                    data: this.canada
-                }],              
-
+                    name: 'Active cases',
+                    data: this.countries,
+                }]
             });
         }
     },
     mounted(){
-        fetch("https://api.covid19api.com/dayone/country/canada/status/confirmed")
-        .then(response => response.json())
-        .then(data => {
-            for(var i = 0; i < data.length;i++){
-                //var arr = [data[i].Date.substring(0, 10), data[i].Cases];
-                //this.canada.push(arr);
-                if(data[i].Province == "Ontario")
-                    this.canada.push(data[i].Cases);                
-            }
-            console.log(data.length);
-            this.createChart();            
-        });        
+        for(var i = 0; i < this.countries.length; i++){
+            fetch("https://covid-api.com/api/reports?region_name=" + this.countries[i][0])
+            .then(response => response.json())
+            .then(data => {
+                data.data.forEach(e => this.countries[this.countries.findIndex(e => e[0] == data.data[0].region.name)][1] += e.active);
+                this.createChart(); 
+                console.log(this.countries);
+            }); 
+        }                        
     }    
 }
 </script>
 
 <style scoped>
-    /* @import 'https://code.highcharts.com/css/themes/dark-unica.css'; */
-    .embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}
+     /*@import 'https://code.highcharts.com/css/themes/dark-unica.css';*/
+    .main-graph {
+        width: 80%;
+    }
 </style>

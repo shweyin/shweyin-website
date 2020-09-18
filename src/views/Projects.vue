@@ -95,14 +95,14 @@ export default {
             },
             {
                 name: "Shweyin Portfolio Website Covid Stats Page",
-                link: "https://github.com/shweyin/shweyin-website",
+                link: "https://github.com/shweyin/shweyin-website/blob/master/src/views/Covid.vue",
                 start: "Sept 10, 2020",
                 end: "WIP"
             },            
             ],
             past: [{
                 name: "HOOPP ServiceNow Hackathon 2020",
-                link: "",
+                link: "https://youtu.be/5NcCo7UaeLA",
                 start: "Aug 10, 2020",
                 end: "Aug 24, 2020"
             },
