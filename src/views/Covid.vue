@@ -1,9 +1,5 @@
 <template>
-    <v-container>        
-        <v-row id="countries">
-           
-        </v-row>     
-    </v-container>
+    <iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="100%" height="100%"></iframe>
 </template>
 
 <script>
@@ -55,7 +51,7 @@ export default {
             .then(response => response.json())
             .then(data => {
                 data.data.forEach(e => this.countries[this.countries.findIndex(e => e[0] == data.data[0].region.name)][1] += e.active);
-                this.createChart(); 
+                //this.createChart(); 
                 console.log(this.countries);
             }); 
         }                        
