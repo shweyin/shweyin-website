@@ -4,6 +4,7 @@
         <v-row>
             <v-col>
                 <h1 class="white--text">Active cases per country</h1>
+                <p class="white--text">Data collected from <a class="white--text" href="https://systems.jhu.edu/">John Hopkins CSSE</a></p>
                 <v-simple-table class="grey darken-3" dark>
                     <thead>
                         <tr>
