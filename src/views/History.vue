@@ -3,6 +3,9 @@
         <v-row>            
                 <v-col lg="12">
                     <h1 class="white--text">My Github Commit History</h1>
+                    <div class="loading">
+                        <v-img v-if="loading" width="50" height="50" src="../assets/loading.gif"></v-img>
+                    </div>            
                     <v-timeline dense>
                         <v-timeline-item
                             v-for="(item, i) in commits"
@@ -40,22 +43,24 @@
 
 <script>
 export default {
+    data(){
+        return {
+            commits: [],
+            loading: true
+        }
+    },
     created(){
         fetch("https://api.github.com/search/commits?q=committer-date:>2020-08-01 author:shweyin sort:author-date-asc", {headers: {'Accept': 'application/vnd.github.cloak-preview+json'}})
         .then(response => response.json())
         .then(data => {
-            for(var i = 0; i < data.total_count; i++) {
+            for(var i = 0; i < data.items.length; i++) {
                 if(data.items[i].repository.name == "shweyin-website"){
                     this.commits.push(data.items[i]);
                 }                      
             }
+            this.loading = false;
         });
-    },
-    data(){
-        return {
-            commits: [],
-        }
-    }
+    }    
 }
 </script>
 
@@ -63,5 +68,11 @@ export default {
     a, a:link, a:visited{
         text-decoration: none;
         color:white;
+    }
+    .loading {        
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 </style>

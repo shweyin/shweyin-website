@@ -8,8 +8,8 @@
                 <v-simple-table class="grey darken-3" dark>
                     <thead>
                         <tr>
-                            <th><a v-on:click="sortByName(true)" class="white--text sort-link">Country</a></th>
-                            <th><a v-on:click="sortByName(false)" class="white--text sort-link">Active Cases</a></th>
+                            <th><a v-on:click="sortByName(true)" class="white--text sort-link">Country<v-icon v-if="sortedByName">mdi-chevron-up</v-icon><v-icon v-if="!sortedByName">mdi-chevron-down</v-icon></a></th>
+                            <th><a v-on:click="sortByName(false)" class="white--text sort-link">Active Cases<v-icon v-if="!sortedByName">mdi-chevron-up</v-icon><v-icon v-if="sortedByName">mdi-chevron-down</v-icon></a></th>
                         </tr>                    
                     </thead>
                     <tbody>
@@ -23,7 +23,7 @@
         </v-row>
         <v-row>
             <div class="loading">
-                <v-img class="ma-16" v-if="loading" width="50" height="50" src="../assets/loading.gif"></v-img>
+                <v-img v-if="loading" width="50" height="50" src="../assets/loading.gif"></v-img>
             </div>            
         </v-row>
     </v-container>
@@ -38,7 +38,8 @@ export default {
             //countries: [['Canada', 0], ['Japan', 0], ['Hungary', 0], ['Switzerland', 0], ['Poland', 0], ['Germany', 0], ['Italy', 0], ['Sweden', 0], ["US", 0],["China", 0], ["India", 0], ["Brazil", 0]]
             countries: [],
             response: [],
-            loading: true
+            loading: true,
+            sortedByName: false
         }
     },
     methods: {
@@ -46,9 +47,11 @@ export default {
             console.log(sortName);
             if(sortName){
                 this.countries.sort();
+                this.sortedByName = true;
             }
             else{
                 this.countries.sort((a, b) => a[1] < b[1]);
+                this.sortedByName = false;
             }
         },
         createChart: function(){
