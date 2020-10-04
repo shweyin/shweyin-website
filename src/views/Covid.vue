@@ -8,8 +8,8 @@
                 <v-simple-table class="grey darken-3" dark>
                     <thead>
                         <tr>
-                            <th><v-btn text v-on:click="sortByName(true)" class="grey darken-3">Country</v-btn></th>
-                            <th><v-btn text v-on:click="sortByName(false)" class="grey darken-3">Active Cases</v-btn></th>
+                            <th><a v-on:click="sortByName(true)" class="white--text sort-link">Country</a></th>
+                            <th><a v-on:click="sortByName(false)" class="white--text sort-link">Active Cases</a></th>
                         </tr>                    
                     </thead>
                     <tbody>
@@ -21,6 +21,11 @@
                 </v-simple-table>
             </v-col>            
         </v-row>
+        <v-row>
+            <div class="loading">
+                <v-img class="ma-16" v-if="loading" width="50" height="50" src="../assets/loading.gif"></v-img>
+            </div>            
+        </v-row>
     </v-container>
 </template>
 
@@ -31,7 +36,9 @@ export default {
     data(){
         return{
             //countries: [['Canada', 0], ['Japan', 0], ['Hungary', 0], ['Switzerland', 0], ['Poland', 0], ['Germany', 0], ['Italy', 0], ['Sweden', 0], ["US", 0],["China", 0], ["India", 0], ["Brazil", 0]]
-            countries: []
+            countries: [],
+            response: [],
+            loading: true
         }
     },
     methods: {
@@ -82,6 +89,7 @@ export default {
         .then(response => response.json())
         .then(data => {
             //data.data.forEach(e => this.countries[this.countries.findIndex(e => e[0] == data.data[0].region.name)][1] += e.active);
+            this.response = data.data;
             data.data.forEach(e => {
                 var findIndex = this.countries.findIndex(c => c[0] == e.region.name)
                 if(findIndex == -1){
@@ -91,7 +99,8 @@ export default {
                     this.countries[findIndex][1] += e.active;
                 } 
             });
-            this.countries.sort((a, b) => a[1] < b[1]);            
+            this.countries.sort((a, b) => a[1] < b[1]);    
+            this.loading = false;        
             //this.createChart(); 
         });                    
     }    
@@ -102,5 +111,18 @@ export default {
      /*@import 'https://code.highcharts.com/css/themes/dark-unica.css';*/
     .main-graph {
         width: 80%;
+    }
+    .loading {        
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .sort-link{
+        font-size: 16px;       
+        
+    }
+    .sort-link:hover{
+        filter: brightness(50%);
     }
 </style>
