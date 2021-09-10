@@ -1,33 +1,11 @@
 <template>
     <v-container class="pa-5">
         <v-row>
-            <v-col lg="12" align="center" class="py-16">
-                <v-hover close-delay="400" v-slot:default="{hover}">
-                    <h1>{{$vuetify.breakpoint.smAndDown || hover ? "卒業まで" : "Time Until Graduation"}}</h1>
-                </v-hover>                
-                <div class="timer">                    
-                    <div class="time">
-                        <p>Days</p>
-                        <h1>{{days > 9 ? days : "0" + days}}</h1>
-                        <p>日</p>
-                    </div>
-                    <div class="time">
-                        <p>Hours</p>
-                        <h1>{{hours > 9 ? hours : "0" + hours}}</h1>
-                        <p>時間</p>
-                    </div>
-                    <div class="time">
-                        <p>Minutes</p>
-                        <h1>{{minutes > 9 ? minutes : "0" + minutes}}</h1>
-                        <p>分</p>
-                    </div>
-                    <div class="time">
-                        <p>Seconds</p>
-                        <h1>{{seconds > 9 ? seconds : "0" + seconds}}</h1>
-                        <p>秒</p>
-                    </div>
-                </div>
-            </v-col>
+            <h1>Welcome to my site!</h1>
+        </v-row>
+        <v-row class="pb-5">
+            <h4>Feel free to enjoy a refreshing game of dino while you're here :)</h4>
+        </v-row>  
             <!-- <v-col lg="5">
                 <v-card height class="grey darken-1">
                     <v-card-title class="grey darken-4 white--text">My Japan Trip</v-card-title>
@@ -44,7 +22,6 @@
                 </v-card>
 
             </v-col> -->
-        </v-row>
         <v-row class="pa-5">
             <v-col lg="12" align="center">
                 <iframe frameborder="1" scrolling="no" class="dino-game" src="https://www.dinogame.net/game/"></iframe>
@@ -59,7 +36,12 @@
     h1{
         font-size: 4em;
         color: white;
-        word-wrap: break-word;
+        margin: auto;
+    }
+    h4{
+        font-size: 1em;
+        color: white;
+        margin: auto;
     }
     .timer{
         display: flex;
